@@ -17,5 +17,6 @@ public class ReverseSinglePointer{
             i++;
         }
         System.out.println(Arrays.toString(arr));
+        sc.close();
     }
 }
