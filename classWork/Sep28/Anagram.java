@@ -1,4 +1,4 @@
-package classWork.Sep28;
+package Sep28;
 
 import java.util.*;
 
@@ -7,24 +7,38 @@ public class Anagram {
         Scanner sc = new Scanner(System.in);
         String input1 = sc.nextLine();
         String input2 = sc.nextLine();
-        HashMap<Character,Integer> map1 = new HashMap<>();
+        int[] count = new int[52];
         for(int i=0;i<input1.length();i++){
-            map1.put(input1.charAt(i),map1.getOrDefault(input1.charAt(i),0)+1);
+            char ch = input1.charAt(i);
+            if(ch>'a' && ch<'z'){
+                count[ch-'a']++;
+            }
+            else{
+                count[ch-'A']++;
+            }
         }
         for(int i=0;i<input2.length();i++){
             char ch = input2.charAt(i);
-            if(map1.containsKey(ch)){
-                map1.put(ch,map1.get(ch)-1);
+            if(ch>'a' && ch<'z'){
+                count[ch-'a']--;
+                if(count[ch-'a']<0){
+                    System.out.println("Not an anagram");
+                    sc.close();
+                    return;
+                }
             }
             else{
-                System.out.println("Not a anagram");
-                sc.close();
-                return;
+                count[ch-'A']--;
+                if(count[ch-'A']<0){
+                    System.out.println("Not an anagram");
+                    sc.close();
+                    return;
+                }
             }
         }
-        for (int x : map1.values()){
-            if(x!=0){
-                System.out.println("Not a anagram");
+        for(int i=0;i<52;i++){
+            if(count[i]!=0){
+                System.out.println("Not an anagram");
                 sc.close();
                 return;
             }

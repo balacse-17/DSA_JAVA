@@ -1,4 +1,4 @@
-package classWork.Sep23;
+package Sep23;
 // Input:
 // 5
 // 100 200 150 300 250

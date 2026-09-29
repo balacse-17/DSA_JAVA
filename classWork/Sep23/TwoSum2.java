@@ -1,4 +1,4 @@
-package classWork.Sep23;
+package Sep23;
 
 public class TwoSum2 {
     public static void main(String[] args) {

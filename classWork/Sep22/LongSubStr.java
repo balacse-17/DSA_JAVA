@@ -1,4 +1,4 @@
-package classWork.Sep22;
+package Sep22;
 
 import java.util.HashSet;
 

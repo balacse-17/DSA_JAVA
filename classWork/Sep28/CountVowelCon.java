@@ -1,4 +1,4 @@
-package classWork.Sep28;
+package Sep28;
 
 import java.util.Scanner;
 

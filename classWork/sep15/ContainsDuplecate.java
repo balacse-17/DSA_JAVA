@@ -1,4 +1,4 @@
-package classWork.sep15;
+package sep15;
 
 import java.util.HashMap;
 

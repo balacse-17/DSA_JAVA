@@ -1,4 +1,4 @@
-package classWork.Sep22;
+package Sep22;
 
 public class MaxConseOne {
     public static void main(String[] args) {
