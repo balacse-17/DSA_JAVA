@@ -1,17 +1,23 @@
 package sep15;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 public class ContainsDuplecate {
-    public boolean containsDuplicate(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
+    public static void containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
 
         for(int i=0;i<nums.length;i++){
-            if(map.containsKey(nums[i])){
-                return true;
+            if(set.contains(nums[i])){
+                System.out.println("There is a duplicate element"); // 10,20,30
+                return;
             }
-            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+            set.add(nums[i]);
         }
-        return false;
+        System.out.println("There is no duplicate elements");
+        return;
+    }
+    public static void main(String[] args) {
+        int[] arr = {10,20,30,10,40};
+        containsDuplicate(arr);
     }
 }
